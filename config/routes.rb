@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     get 'about'
     get 'comics'
     get 'other'
-    get 'illustration'
+    get 'illustrations'
   end
 end

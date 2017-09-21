@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   def comics
   end
 
-  def illustration
+  def illustrations
   end
 
   def about
