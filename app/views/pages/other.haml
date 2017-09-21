@@ -1,0 +1,51 @@
+%section.other
+  %h2 Other Projects
+  %ul.work-grid
+    %li.project.js-overlay-trigger{ data: { overlay_index: 1 } }
+      .overlay
+        %p Panels to the People
+      = image_tag 'aubrey-assets/other/P2tp.jpg'
+
+    %li.project.js-overlay-trigger{ data: { overlay_index: 2 } }
+      .overlay
+        %p What Type of Girl?
+      = image_tag 'aubrey-assets/other/Other Projects_WTOG2.jpg'
+
+#overlays
+  = render 'overlay', idx: 1 do
+    .slide.js-slide.wide
+      .width-50
+        = image_tag 'aubrey-assets/other/P2tp.jpg'
+      .width-50
+        %p
+          Monthly, themed readings of comics by established and up-and-coming comics creators. Formerly at Babycastles Gallery, now at WORD Bookstore.
+          Co-hosted with cartoonist Jeremy Nguyen.
+
+        %p
+          Information on current themes and upcoming readings
+          = link_to 'here', 'https://www.facebook.com/panelstothepeople', target: '_blank'
+
+  = render 'overlay', idx: 2 do
+    .slide.js-slide.text.wide
+      .title-card
+        %h2 What Type of Girl?
+        %p Art show at Babycastles Gallery in Manhattan
+    .slide.js-slide
+      = image_tag 'aubrey-assets/other/Other Projects_WTOG1.jpg'
+    .slide.js-slide
+      = image_tag 'aubrey-assets/other/Other Projects_WTOG2.jpg'
+    .slide.js-slide
+      = image_tag 'aubrey-assets/other/Other Projects_WTOG3.jpg'
+    .slide.js-slide
+      = image_tag 'aubrey-assets/other/Other Projects_WTOG4.jpg'
+    .slide.js-slide
+      = image_tag 'aubrey-assets/other/Other Projects_WTOG5.jpg'
+    .slide.js-slide
+      = image_tag 'aubrey-assets/other/Other Projects_WTOG6.jpg'
+    .slide.js-slide
+      = image_tag 'aubrey-assets/other/Other Projects_WTOG7.jpg'
+    .slide.js-slide
+      = image_tag 'aubrey-assets/other/Other Projects_WTOG8.jpg'
+    .slide.js-slide
+      = image_tag 'aubrey-assets/other/Other Projects_WTOG9.jpg'
+
