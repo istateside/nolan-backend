@@ -16,6 +16,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'aws-sdk', '>= 2.0.34'
 gem 'paperclip'
 
+gem 'envyable'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 #

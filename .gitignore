@@ -21,3 +21,6 @@
 /public/packs-test
 /node_modules
 config/secrets.yml
+
+# Don't check in credentials 
+config/env.yml
