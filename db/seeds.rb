@@ -182,3 +182,21 @@ type.slides = make_slides([
   'aubrey-assets/other/Other Projects_WTOG9.jpg'
 ])
 type.save!
+
+about = Project.new
+about.title = "About"
+about.category = "About"
+about.cover_image = make_image('lady-head.png')
+about.description = <<-HEREDOC
+Aubrey Nolan is a visual artist specializing in watercolor-and-ink illustrations and comics of commonplace, yet whimsical, scenes. She graduated from SUNY New Paltz with a BFA in Painting + Drawing in 2012 and is based in Brooklyn.
+
+You can email her for freelance work or just to say hi at [aubreygnolan@gmail.com](mailto:aubreygnolan@gmail.com).
+
+You can take a look at how put together she truly can be on [LinkedIn](https://www.linkedin.com/in/aubrey-nolan-26352966/?locale=en_US).
+
+You can follow her [Instagram](https://www.instagram.com/itsaubreynotaudrey) for her most current work as well as snapshots of works in progress.
+
+You can take a look at the far-from-cohesive thought dump that is her [Twitter](https://twitter.com/aubrey_nolan).
+HEREDOC
+
+about.save!
