@@ -20,6 +20,7 @@ gem 'paperclip'
 #
 gem 'haml-rails'
 gem 'webpacker'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
