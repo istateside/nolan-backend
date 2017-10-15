@@ -1,0 +1,19 @@
+%h1 Admin - About
+
+= form_for @about, url: admin_about_url do |f|
+  .form-field
+    %label Cover Image
+    - if @about.cover_image.image_url
+      = image_tag @about.cover_image.image_url, width: 80
+      %span= @about.cover_image.image_url
+    = f.file_field :cover_image
+
+  .form-field
+    %label Description
+    %span
+      Use 
+      = link_to 'Markdown syntax', 'https://help.github.com/articles/basic-writing-and-formatting-syntax/#links'
+      for formatting text and links 
+    = f.text_area :description, rows: 20
+
+  = f.submit 'Update About Page'

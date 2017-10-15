@@ -8,4 +8,13 @@ Rails.application.routes.draw do
     get 'other'
     get 'illustrations'
   end
+
+  namespace :admin do
+    root action: :index
+    resources :images
+    resource :about
+    resources :projects do
+      resources :slides
+    end
+  end
 end

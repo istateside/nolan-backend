@@ -137,61 +137,6 @@ nav a {
   background: hsla(0, 0%, 100%, 0.5);
 }
 
-#admin-header {
-  padding: .8em 1.5em;
-  margin: .5em;
-  background: black;
-  font-weight: bold;
-  color: white;
-  position: fixed;
-  top: 0;
-  right: 0;
-  font-size: 1.3em;
-  z-index: 20;
-
-  a {
-    background: black;
-    padding: .5em .8em;
-    margin-left: 1.5em;
-    transition: background .2s;
-
-    &:hover {
-      background: red;
-    }
-  }
-}
-
-.admin {
-  header {
-    a,
-    img {
-      display: block;
-    }
-
-    img {
-      margin: 0 auto;
-    }
-  }
- 
-  .field {
-    margin-bottom: 1rem;
-  }
-
-  main {
-    > h2,
-    > form, 
-    > a {
-      display: block;
-      margin: auto;
-      width: 300px;
-    }
-
-    form {
-      margin: 2rem auto;
-    }
-  }
-}
-
 #flash {
   font-size: 2em;
   background: rgba(173, 216, 230, 0.7);

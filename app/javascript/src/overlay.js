@@ -32,7 +32,7 @@ export default class OverlayHandler {
 
   resizeImage(img) {
     if (img.clientHeight > img.clientWidth) {
-      img.parentElement.setAttribute('style', 'max-height: 80%; width: auto;max-width:none;'); 
+      img.parentElement.setAttribute('style', 'max-height: 80%; width: auto; max-width:none;'); 
     } else {
       img.parentElement.setAttribute('style', 'max-width: 80%; height: auto; max-height:none;');
     }

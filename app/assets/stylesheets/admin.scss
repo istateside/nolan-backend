@@ -1,0 +1,67 @@
+.admin {
+  color: #787878;
+
+  a {
+  color: rgb(120,120,120);
+  transition: color .2s ease-out;
+
+    &:hover {
+      color: rgb(250,200,200);
+    }
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background: black;
+    text-transform: uppercase;
+
+    nav {
+      display: flex;
+      font-size: 12px;
+      padding: .5rem 2rem;
+
+      a {
+        color: white;
+      }
+    }
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+
+    label {
+      margin-bottom: .5rem;
+    }
+
+    span {
+      font-size: 1rem;
+    }
+  }
+}
+
+.admin-abouts {
+  font-size: 15px;
+
+  img {
+    width: 100px;
+  }
+
+  .description {
+    font-size: 20px;
+    padding: 1rem;
+    border: 1px solid #787878;
+
+    p {
+      margin-bottom: .5rem;
+    }
+  }
+}
+
+.admin .projects {
+
+}

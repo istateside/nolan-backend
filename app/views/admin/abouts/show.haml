@@ -1,0 +1,10 @@
+%h1 Admin - About
+
+%nav
+  = link_to 'Edit', edit_admin_about_url
+
+%h3  Cover Image
+.cover-img= image_tag @about.cover_image.image_url
+
+%h3 Text
+.description= render_markdown @about.description
