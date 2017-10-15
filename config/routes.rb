@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root action: :index
     resources :images
-    resource :about
+    resource :about, except: [:create, :destroy, :new]
     resources :projects do
       resources :slides
     end
