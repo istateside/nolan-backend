@@ -1,0 +1,21 @@
+%section
+  %h2= @page_header
+  %ul.work-grid
+    - @projects.each.with_index(1) do |project, idx|
+      %li.project.js-overlay-trigger{ data: { overlay_index: idx } }
+        .overlay
+          %p= project.title
+        = image_tag project.cover_image.image_url
+
+#overlays
+  - @projects.each.with_index(1) do |project, idx|
+    = render 'overlay', idx: idx do
+      .slide.js-slide.wide.text
+        .title-card
+          %h2= project.title
+          - if project.description
+            %p= render_markdown project.description
+      - project.slides.each do |slide|
+        .slide.js-slide
+          = image_tag slide.image.image_url
+
