@@ -85,10 +85,19 @@
 }
 
 .admin-projects {
+  #slides {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .project-slide {
     border: 1px solid black;
     padding: 1rem;
-    margin-bottom: .5rem;
+    margin: .5rem 1rem;
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    background: #effffd;
 
     h3 {
       margin-top: 0;
@@ -97,5 +106,34 @@
 
   .preview-img img {
     width: auto;
+  }
+
+  .badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    margin-top: -12.5px;
+    margin-left: -12.5px;
+    background: black;
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 25px;
+  }
+
+  .delete-slide {
+    font-size: 25px;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1rem;
+  }
+
+  #links {
+    flex: 1 0 100%;  
   }
 }

@@ -1,9 +1,12 @@
 .project-slide.nested-fields
+  - idx = f.index
+  %span.badge= idx == 'new_slides' ? 'New' : idx
   .form-field
     %label Caption
     = f.text_area :description, rows: 6
 
   - image = f.object.image.present? ? f.object.image : f.object.build_image
+
   = f.fields_for :image, image do |img|
     .form-field
       %label Image
@@ -14,5 +17,4 @@
 
       = img.file_field :attachment
 
-  = link_to_remove_association "Remove Slide", f
-
+  = link_to_remove_association "×", f, class: 'delete-slide'

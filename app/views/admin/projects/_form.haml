@@ -1,0 +1,39 @@
+- is_new = @project.new_record?
+- url = is_new ? admin_projects_url : admin_project_url
+
+= form_for @project, url: url, html: { multipart: true } do |f|
+  = f.fields_for :cover_image, @cover_image do |cover_image_fields|
+    .form-field
+      %label Cover Image
+      - if @cover_image.attachment
+        .preview-img= image_tag @cover_image.attachment.url(:medium)
+        %span= @cover_image.attachment.url
+      = cover_image_fields.file_field :attachment
+
+  .form-field
+    %label Category
+    = f.select :category, options_for_select(['Illustrations', 'Comics', 'Other'], 'Illustrations')
+
+  .form-field
+    %label Title
+    = f.text_field :title
+
+  .form-field
+    %label Description
+    %span
+      Use 
+      = link_to 'Markdown syntax', 'https://help.github.com/articles/basic-writing-and-formatting-syntax/#links'
+      for formatting text and links 
+    = f.text_area :description, rows: 20
+
+  %h4 Slides
+  #slides
+    = f.fields_for(:slides) do |slide_form|
+      = render 'slide_fields', f: slide_form
+    #links
+      = link_to_add_association 'Add Slide', f, :slides
+
+  = f.submit "#{is_new ? 'Create' : 'Update'} Project"
+
+  - back_link = is_new ? admin_projects_url : admin_project_url(@project)
+  = link_to 'Cancel', back_link
