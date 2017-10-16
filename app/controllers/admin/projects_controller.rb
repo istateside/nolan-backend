@@ -4,7 +4,7 @@ class Admin::ProjectsController < AdminController
     if params[:category]
       @projects = Project.where(category: params[:category])
     else
-      @projects = Project.all
+      @projects = Project.where.not(category: 'About')
     end
   end
 
