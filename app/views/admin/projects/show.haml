@@ -1,0 +1,26 @@
+%h1 Admin - Projects
+
+%nav
+  = link_to 'Edit', edit_admin_project_url(@project)
+  = link_to 'Back', admin_projects_url
+
+%h3 Category
+.category= @project.category
+
+%h3 Title
+.title= @project.title
+
+%h3 Description
+.description= @project.description.present? ? @project.description : 'No description set'
+
+- if @project.slides.any?
+  %h3 Slides
+  - @project.slides.each.with_index(1) do |slide, i|
+    .project-slide
+      %h3= "Slide #{i}"
+      %h4 Caption
+      .caption= slide.description.present? ? slide.description : 'No caption set'
+
+      - if slide.image.present?
+        = slide.image.attachment.url(:medium)
+        .preview-img= image_tag(slide.image.attachment.url(:medium))

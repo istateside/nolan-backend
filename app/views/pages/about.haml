@@ -1,4 +1,4 @@
 %section.about
-  = image_tag @about.cover_image.image_url
+  = image_tag @about.cover_image.attachment.url(:medium)
 
   = render_markdown @about.description

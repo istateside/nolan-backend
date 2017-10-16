@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="//nebula.wsimg.com/5533e3339b273c3c8f69e3c649b3567c?AccessKeyId=012E2E7A81F6E42C11CD&amp;disposition=0&amp;alloworigin=1">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css"/>
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application'
 
   %body.app{ class: "#{params[:controller]}".parameterize + ' admin' }
     %header
@@ -14,9 +15,9 @@
         %span.dropdown-trigger 
           = link_to 'Projects', admin_projects_url
           %ul.dropdown
-            %li= link_to 'Comics', admin_projects_url(category: "comics")
-            %li= link_to 'Illustrations', admin_projects_url(category: "illustrations")
-            %li= link_to 'Other Projects', admin_projects_url(category: "other")
+            %li= link_to 'Comics', admin_projects_url(category: "Comics")
+            %li= link_to 'Illustrations', admin_projects_url(category: "Illustrations")
+            %li= link_to 'Other Projects', admin_projects_url(category: "Other")
 
         = link_to 'About', admin_about_url
 

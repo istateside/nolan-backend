@@ -41,15 +41,31 @@
     span {
       font-size: 1rem;
     }
+
+    img {
+      width: auto;
+    }
+  }
+
+  table {
+    border: 1px solid black;
+    font-size: 1.5rem;
+
+    th {
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: .5rem;
+      border: 1px solid black;
+    }
   }
 }
 
-.admin-abouts {
+.admin-abouts,
+.admin-projects {
   font-size: 15px;
-
-  img {
-    width: 100px;
-  }
 
   .description {
     font-size: 20px;
@@ -62,6 +78,24 @@
   }
 }
 
-.admin .projects {
+.admin-abouts {
+  img {
+    width: 100px;
+  }
+}
 
+.admin-projects {
+  .project-slide {
+    border: 1px solid black;
+    padding: 1rem;
+    margin-bottom: .5rem;
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  .preview-img img {
+    width: auto;
+  }
 }

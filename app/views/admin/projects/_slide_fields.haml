@@ -1,0 +1,17 @@
+.project-slide.nested-fields
+  .form-field
+    %label Caption
+    = f.text_area :description, rows: 6
+
+  = f.fields_for :image do |img|
+    .form-field
+      %label Image
+      - if img.object.attachment.present?
+        .preview-img
+          = image_tag img.object.attachment.url(:medium)
+        %span= img.object.attachment.url(:medium)
+
+      = img.file_field :attachment
+
+  = link_to_remove_association "Remove Slide", f
+

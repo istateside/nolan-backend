@@ -1,0 +1,19 @@
+%h1 Admin - Projects
+
+%table
+  %thead
+    %th Category
+    %th Title
+    %th Description
+    %th Position
+    %th Actions
+
+  - @projects.each do |project|
+    %tr
+      %td= project.category
+      %td= project.title
+      %td= project.description
+      %td= project.position
+      %td
+        = link_to 'View', admin_project_url(project)
+        = link_to 'Edit', edit_admin_project_url(project)

@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="//nebula.wsimg.com/5533e3339b273c3c8f69e3c649b3567c?AccessKeyId=012E2E7A81F6E42C11CD&amp;disposition=0&amp;alloworigin=1">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css"/>
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application'
 
   %body.app{ class: "#{params[:controller]}-#{params[:action]}".gsub('/', '-').parameterize }
     %header
