@@ -1,13 +1,12 @@
 %h1 Admin - Project Edit
 
 = form_for @project, url: admin_project_url, html: { multipart: true } do |f|
-  - cover_image = @project.cover_image || @project.cover_image.build
-  = f.fields_for :cover_image, cover_image do |cover_image_fields|
+  = f.fields_for :cover_image, @cover_image do |cover_image_fields|
     .form-field
       %label Cover Image
-      - if cover_image.attachment
-        .preview-img= image_tag cover_image.attachment.url(:medium)
-        %span= cover_image.attachment.url
+      - if @cover_image.attachment
+        .preview-img= image_tag @cover_image.attachment.url(:medium)
+        %span= @cover_image.attachment.url
       = cover_image_fields.file_field :attachment
 
   .form-field

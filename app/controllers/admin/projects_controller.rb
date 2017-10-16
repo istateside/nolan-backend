@@ -1,4 +1,5 @@
 class Admin::ProjectsController < AdminController
+  before_action :set_project, only: [:show, :edit, :update]
   def index
     if params[:category]
       @projects = Project.where(category: params[:category])
@@ -26,9 +27,9 @@ class Admin::ProjectsController < AdminController
   end
 
   def create
-    @project = Project.find(params[:id])
+    @project = Project.new(project_params)
 
-    if @project.create(project_params)
+    if @project.save
       redirect_to admin_project_url @project
     else
       render :new
@@ -65,5 +66,10 @@ class Admin::ProjectsController < AdminController
         ]
       }
     )
+  end
+
+  def set_project
+    @project = Project.find(params[:id])
+    @cover_image = @project.cover_image || @project.build_cover_image
   end
 end
