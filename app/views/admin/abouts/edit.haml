@@ -5,7 +5,7 @@
     .form-field
       %label Cover Image
       - if @cover_image.attachment.present?
-        = image_tag @cover_image.attachment.url, width: 80
+        .preview-img= image_tag @cover_image.attachment.url, width: 80
         %span= @cover_image.attachment.url
       = cover_image_fields.file_field :attachment
 
