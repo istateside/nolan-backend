@@ -5,6 +5,7 @@
 %table
   %thead
     %th Category
+    %th Published?
     %th Title
     %th Thumbnail
     %th Description
@@ -14,6 +15,7 @@
   - @projects.each do |project|
     %tr
       %td= project.category
+      %td= project.is_published ? 'T' : 'F'
       %td= project.title
       %td= image_tag project.cover_image.attachment(:thumb)
       %td= project.description.present? ? project.description : 'n/a'
