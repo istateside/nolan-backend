@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'aws-sdk', '>= 2.0.34'
 gem 'paperclip'
 gem 'cocoon'
+gem 'acts_as_list'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
