@@ -31,7 +31,7 @@
     = f.fields_for :slides, include_id: false do |slide_form|
       = render 'slide_fields', f: slide_form
     #links
-      = link_to_add_association 'Add Slide', f, :slides
+      = link_to_add_association 'Add Slide', f, :slides, class: 'add-slide-link'
 
   = f.submit "#{is_new ? 'Create' : 'Update'} Project"
 

@@ -17,9 +17,7 @@
           = image_tag img.object.attachment.url(:medium)
         %span= img.object.attachment.url(:medium)
 
-      %label
-        Click to Add Image
-        = img.file_field :attachment
+      = img.file_field :attachment
 
   .form-field
     %label Caption
