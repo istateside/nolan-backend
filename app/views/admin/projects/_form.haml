@@ -27,8 +27,8 @@
     = f.text_area :description, rows: 20
 
   %h4 Slides
-  #slides
-    = f.fields_for(:slides) do |slide_form|
+  #slides.js-list
+    = f.fields_for :slides, include_id: false do |slide_form|
       = render 'slide_fields', f: slide_form
     #links
       = link_to_add_association 'Add Slide', f, :slides

@@ -52,6 +52,7 @@ class Admin::ProjectsController < AdminController
       :title,
       :category,
       :description,
+      :position,
       {
         cover_image_attributes: [:attachment, :id, :_destroy]
       },
@@ -59,6 +60,7 @@ class Admin::ProjectsController < AdminController
         slides_attributes: [
           :description,
           :id,
+          :position,
           :_destroy,
           {
             image_attributes: [:id, :attachment]

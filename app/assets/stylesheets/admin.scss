@@ -17,6 +17,7 @@
     left: 0;
     background: black;
     text-transform: uppercase;
+    z-index: 999;
 
     nav {
       display: flex;
@@ -87,17 +88,18 @@
 .admin-projects {
   #slides {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   .project-slide {
     border: 1px solid black;
     padding: 1rem;
-    margin: .5rem 1rem;
+    margin: 1rem 0;
     position: relative;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     background: #effffd;
+    width: 500px;
 
     h3 {
       margin-top: 0;
