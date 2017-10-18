@@ -7,6 +7,7 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 import OverlayTracker from 'src/overlay.js'
+import AdminForms from 'src/admin_forms.js'
 
 window.OverlayTracker = new OverlayTracker();
-
+window.AdminForms = new AdminForms();
