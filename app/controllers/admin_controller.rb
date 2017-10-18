@@ -8,7 +8,8 @@ class AdminController < ApplicationController
   private
   def authenticate
     unless session[:logged_in]
-      redirect_to new_session_url
+      flash[:notice] = 'You need to log in to access this page.'
+      redirect_to log_in_url
     end
   end
 end
