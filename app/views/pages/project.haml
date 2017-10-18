@@ -5,8 +5,8 @@
       %li.project.js-overlay-trigger{ data: { overlay_index: idx } }
         .overlay
           %p= project.title
-        - if project.cover_image.present?
-          = image_tag project.cover_image.image_url
+        - if project.cover_image.attachment.present?
+          = image_tag project.cover_image.attachment.url
 
 #overlays
   - @projects.each.with_index(1) do |project, idx|
@@ -18,5 +18,12 @@
             %p= render_markdown project.description
       - project.slides.each do |slide|
         .slide.js-slide
-          = image_tag slide.image.image_url
+          - if slide.image.attachment.present?
+            %figure
+              = image_tag slide.image.attachment.url
 
+              - if slide.description.present?
+                %figcaption= slide.description
+
+          - else
+            %p= slide.description

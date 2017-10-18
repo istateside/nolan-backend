@@ -68,14 +68,16 @@
 .admin-projects {
   font-size: 15px;
 
+  .category,
+  .title,
   .description {
-    font-size: 20px;
     padding: 1rem;
     border: 1px solid #787878;
+  }
 
-    p {
-      margin-bottom: .5rem;
-    }
+  .title,
+  .description {
+    font-size: 20px;
   }
 }
 
@@ -102,9 +104,41 @@
     flex-direction: column;
     background: #effffd;
     width: 400px;
+    font-family: "Arial";
 
     h3 {
       margin-top: 0;
+      margin-bottom: .5rem;
+    }
+
+    h4 {
+      margin-top: 0;
+      margin-bottom: .5rem;
+    }
+
+    .caption {
+      border: 1px solid black;
+      padding: .5rem;
+      margin-bottom: .5rem;
+    }
+
+    .preview-img {
+      margin-bottom: .5rem;
+    }
+
+    span {
+      word-break: break-all;
+      font-size: 1.4rem;
+    }
+
+    &:nth-last-child(2) .next-arrow {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &:first-child .prev-arrow {
+      opacity: 0;
+      pointer-events: none;
     }
   }
 
@@ -126,6 +160,15 @@
     text-transform: uppercase;
     text-align: center;
     line-height: 25px;
+  }
+
+  .position-actions {
+    flex-direction: row;
+    font-size: 30px;
+
+    a:last-child {
+      margin-left: 2rem;
+    }
   }
 
   .delete-slide {

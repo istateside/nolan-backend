@@ -5,7 +5,7 @@ export default class OverlayHandler {
   constructor() {
     this.setupListeners();
 
-    //this.resizeSlides();
+    this.resizeSlides();
 
     this.setupSlideshow();
   }
@@ -24,18 +24,14 @@ export default class OverlayHandler {
         if (img.complete) {
           this.resizeImage(img);
         } else {
-          $(img).on('load', this.resizeImage);
+          $(img).on('load', this.resizeImageOnLoad.bind(this));
         }
       }
     });
   }
 
-  resizeImage(img) {
-    if (img.clientHeight > img.clientWidth) {
-      img.parentElement.setAttribute('style', 'max-height: 80%; width: auto; max-width:none;'); 
-    } else {
-      img.parentElement.setAttribute('style', 'max-width: 80%; height: auto; max-height:none;');
-    }
+  resizeImageOnLoad(e) {
+    this.resizeImage(e.currentTarget);
   }
 
   setupSlideshow() {

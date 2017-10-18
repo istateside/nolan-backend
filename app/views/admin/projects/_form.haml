@@ -12,7 +12,7 @@
 
   .form-field
     %label Category
-    = f.select :category, options_for_select(['Illustrations', 'Comics', 'Other'], 'Illustrations')
+    = f.select :category, options_for_select(['Illustrations', 'Comics', 'Other'], @project.category)
 
   .form-field
     %label Title

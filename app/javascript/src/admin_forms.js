@@ -9,6 +9,13 @@ export default class AdminForms {
   bindPositionControls() {
     $(document).on('click', '.js-position-down', this.moveHigher.bind(this));
     $(document).on('click', '.js-position-up', this.moveLower.bind(this))
+
+    $('.delete-slide').on('click', function(event) {
+      if (!confirm("Are you sure?")) {
+        event.preventDefault();
+        return false;
+      }
+    });
   }
 
   moveHigher(e) {

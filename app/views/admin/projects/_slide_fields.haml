@@ -1,8 +1,8 @@
 .project-slide.nested-fields.js-item
   %span.badge.js-position-label= f.object.position
-  .form-field
-    = link_to 'move higher', '#', class: 'js-position-down'
-    = link_to 'move lower', '#', class: 'js-position-up'
+  .form-field.position-actions
+    = link_to '⇦', '#', class: 'js-position-down prev-arrow'
+    = link_to '⇨', '#', class: 'js-position-up next-arrow'
 
   = f.hidden_field :position, class: 'position-input'
   = f.hidden_field :id
@@ -10,13 +10,15 @@
   - image = f.object.image.present? ? f.object.image : f.object.build_image
 
   = f.fields_for :image, image do |img|
-    .form-field
-      %label Image
-      - if img.object.attachment.present?
+    - if img.object.attachment.present?
+      .form-field
+        %label Image
         .preview-img
           = image_tag img.object.attachment.url(:medium)
         %span= img.object.attachment.url(:medium)
 
+    .form-field
+      %label= "#{img.object.attachment.present? ? 'Replace' : 'Add'} Image"
       = img.file_field :attachment
 
   .form-field

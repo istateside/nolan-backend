@@ -4,14 +4,14 @@
   = link_to 'Edit', edit_admin_project_url(@project)
   = link_to 'Back', admin_projects_url
 
-%h3 Category
-.category= @project.category
-
 %h3 Title
 .title= @project.title
 
 %h3 Description
 .description= @project.description.present? ? @project.description : 'No description set'
+
+%h3 Category
+.category= @project.category
 
 - if @project.slides.any?
   %h3 Slides
@@ -22,5 +22,5 @@
       .caption= slide.description.present? ? slide.description : 'No caption set'
 
       - if slide.image.present?
-        = slide.image.attachment.url(:medium)
         .preview-img= image_tag(slide.image.attachment.url(:medium))
+        %span= link_to slide.image.attachment.url, slide.image.attachment.url, target: '_blank'
