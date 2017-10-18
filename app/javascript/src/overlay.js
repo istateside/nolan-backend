@@ -5,8 +5,6 @@ export default class OverlayHandler {
   constructor() {
     this.setupListeners();
 
-    this.resizeSlides();
-
     this.setupSlideshow();
   }
 
@@ -14,24 +12,6 @@ export default class OverlayHandler {
     $('.js-overlay-close').on('click', this.handleOverlayClose.bind(this));
     $('.js-overlay-trigger').on('click', this.handleOverlayTrigger.bind(this));
     $(document).on('keydown', this.handleKeypress.bind(this));
-  }
-
-  resizeSlides() {
-    $('.js-slide').each((idx, element) => {
-      const img = $(element).find('img')[0];
-
-      if (img) {
-        if (img.complete) {
-          this.resizeImage(img);
-        } else {
-          $(img).on('load', this.resizeImageOnLoad.bind(this));
-        }
-      }
-    });
-  }
-
-  resizeImageOnLoad(e) {
-    this.resizeImage(e.currentTarget);
   }
 
   setupSlideshow() {

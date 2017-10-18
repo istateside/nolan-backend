@@ -23,7 +23,7 @@
               = image_tag slide.image.attachment.url
 
               - if slide.description.present?
-                %figcaption= slide.description
+                %figcaption= render_markdown slide.description
 
           - else
             %p= slide.description
