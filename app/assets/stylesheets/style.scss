@@ -48,6 +48,15 @@ nav {
       margin-left: 1.5rem;
     }
   }
+
+  .logout {
+    text-align: right;
+    flex: 1;
+
+    a {
+      margin-left: 2rem;
+    }
+  }
 }
 
 .dropdown-trigger {

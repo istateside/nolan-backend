@@ -6,6 +6,7 @@
   %thead
     %th Category
     %th Title
+    %th Thumbnail
     %th Description
     %th Position
     %th Actions
@@ -14,9 +15,10 @@
     %tr
       %td= project.category
       %td= project.title
-      %td= project.description
+      %td= image_tag project.cover_image.attachment(:thumb)
+      %td= project.description.present? ? project.description : 'n/a'
       %td= project.position
       %td
         = link_to 'View', admin_project_url(project)
         = link_to 'Edit', edit_admin_project_url(project)
-        = link_to 'Destroy', admin_project_url(project), method: :delete, data: { confirm: 'are you sure?' }
+        = link_to 'Destroy', admin_project_url(project), method: :delete, data: { confirm: "Are you sure you want to delete #{project.title}?" }

@@ -11,7 +11,7 @@
   %body.app{ class: "#{params[:controller]}".parameterize + ' admin' }
     %header
       %nav
-        = link_to 'Admin'
+        %span Admin
         %span.dropdown-trigger 
           = link_to 'Projects', admin_projects_url
           %ul.dropdown
@@ -20,6 +20,10 @@
             %li= link_to 'Other Projects', admin_projects_url(category: "Other")
 
         = link_to 'About', admin_about_url
+
+        .logout
+          Logged in as Admin
+          = link_to 'Log out', log_out_url, method: :delete
 
     %main
       = yield

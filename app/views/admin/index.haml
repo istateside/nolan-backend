@@ -1,5 +1,6 @@
 %h1 Admin - Index
 
-= link_to 'About Section', admin_about_url
-
-= link_to 'Projects', admin_projects_url
+%section.admin-index
+  %ul
+    %li= link_to 'Edit About Page', admin_about_url
+    %li= link_to 'Manage Project Slideshows', admin_projects_url

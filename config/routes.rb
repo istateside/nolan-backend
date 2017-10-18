@@ -17,4 +17,9 @@ Rails.application.routes.draw do
       resources :slides
     end
   end
+
+  get '/log_in', controller: :sessions, action: :new, as: :log_in
+  delete '/log_out', controller: :sessions, action: :destroy, as: :log_out
+  post '/log_in', controller: :sessions, action: :create, as: :create_log_in
+
 end

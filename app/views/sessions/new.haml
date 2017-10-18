@@ -1,0 +1,13 @@
+.content
+  %section
+    - if flash[:notice]
+      = flash[:notice]
+
+    = form_for @user, url: create_log_in_url do |f|
+      = f.label :username
+      = f.text_field :username
+
+      = f.label :password
+      = f.password_field :password
+
+      = f.submit 'Log in'

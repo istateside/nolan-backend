@@ -2,6 +2,14 @@
 - url = is_new ? admin_projects_url : admin_project_url
 
 = form_for @project, url: url, html: { multipart: true } do |f|
+  .form-field
+    %label Title
+    = f.text_field :title
+
+  .form-field
+    %label Category
+    = f.select :category, options_for_select(['Illustrations', 'Comics', 'Other'], @project.category)
+
   = f.fields_for :cover_image, @cover_image do |cover_image_fields|
     .form-field
       %label Cover Image
@@ -11,12 +19,10 @@
       = cover_image_fields.file_field :attachment
 
   .form-field
-    %label Category
-    = f.select :category, options_for_select(['Illustrations', 'Comics', 'Other'], @project.category)
-
-  .form-field
-    %label Title
-    = f.text_field :title
+    %label
+      = f.check_box :is_published
+      Publish project?
+    %span Unpublished projects are not visible outside of the admin
 
   .form-field
     %label Description
