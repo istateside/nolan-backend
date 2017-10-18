@@ -53,6 +53,7 @@ class Admin::ProjectsController < AdminController
       :category,
       :description,
       :position,
+      :is_published,
       {
         cover_image_attributes: [:attachment, :id, :_destroy]
       },

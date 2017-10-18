@@ -4,6 +4,9 @@
   = link_to 'Edit', edit_admin_project_url(@project)
   = link_to 'Back', admin_projects_url
 
+- unless @project.is_published
+  .published Warning: This project is not published, and is not visible on any page but this one. Edit this project and set it to "Published" when it is ready to be seen.
+
 %h3 Title
 .title= @project.title
 

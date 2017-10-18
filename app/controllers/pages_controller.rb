@@ -4,19 +4,19 @@ class PagesController < ApplicationController
 
   def other
     @page_header = 'Other'
-    @projects = Project.where(category: "Other")
+    @projects = Project.where(category: "Other", is_published: true)
     render 'project'
   end
 
   def comics
     @page_header = 'Comics'
-    @projects = Project.where(category: "Comics")
+    @projects = Project.where(category: "Comics", is_published: true)
     render 'project'
   end
 
   def illustrations
     @page_header = 'Illustrations'
-    @projects = Project.where(category: "Illustrations")
+    @projects = Project.where(category: "Illustrations", is_published: true)
     render 'project'
   end
 
