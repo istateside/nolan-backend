@@ -55,12 +55,14 @@ export default class OverlayHandler {
   }
 
   showOverlay(overlay) {
-    overlay.classList.add('-is-visible'); 
-    const slider = overlay.querySelector('.js-slide-show');
+    if (overlay) {
+      overlay.classList.add('-is-visible'); 
+      const slider = overlay.querySelector('.js-slide-show');
 
-    if (slider) {
-      $(slider).slick('slickGoTo', 0);
-      $(slider).find('.slick-slide:eq(0)').focus();
+      if (slider) {
+        $(slider).slick('slickGoTo', 0);
+        $(slider).find('.slick-slide:eq(0)').focus();
+      }
     }
   }
 
