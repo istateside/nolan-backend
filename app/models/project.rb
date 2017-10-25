@@ -5,5 +5,5 @@ class Project < ApplicationRecord
 
   accepts_nested_attributes_for :cover_image, :slides, allow_destroy: true, reject_if: :all_blank
 
-  validates_presence_of :cover_image
+  validates_presence_of :cover_image, if: Proc.new { |p| p.is_published? }, message: 'is required to publish a project'
 end
