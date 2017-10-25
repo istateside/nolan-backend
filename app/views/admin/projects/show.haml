@@ -16,6 +16,11 @@
 %h3 Category
 .category= @project.category
 
+- if @project.cover_image.present?
+  %h3 Cover Image
+  .cover-img= image_tag @project.cover_image.attachment.url(:medium)
+  .cover-img-url= @project.cover_image.attachment.url(:medium)
+
 - if @project.slides.any?
   %h3 Slides
   - @project.slides.each.with_index(1) do |slide, i|
