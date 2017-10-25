@@ -1,6 +1,13 @@
 - is_new = @project.new_record?
 - url = is_new ? admin_projects_url : admin_project_url
 
+- if @project.errors.any?
+  .errors
+    %h4 This project has the following errors:
+    %ul
+      - @project.errors.full_messages.each do |msg|
+        %li= msg
+
 = form_for @project, url: url, html: { multipart: true } do |f|
   .form-field
     %label Title

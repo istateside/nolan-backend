@@ -4,4 +4,6 @@ class Project < ApplicationRecord
   acts_as_list scope: [:category]
 
   accepts_nested_attributes_for :cover_image, :slides, allow_destroy: true, reject_if: :all_blank
+
+  validates_presence_of :cover_image
 end
