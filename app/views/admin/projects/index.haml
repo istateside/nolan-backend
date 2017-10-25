@@ -17,7 +17,13 @@
       %td= project.category
       %td= project.is_published ? 'T' : 'F'
       %td= project.title
-      %td= image_tag project.cover_image.attachment(:thumb)
+      - cover_image = project.cover_image
+
+      - if cover_image.present? && cover_image.attachment.present?
+        %td= image_tag cover_image.attachment(:thumb)
+      - else 
+        %td
+
       %td= project.description.present? ? project.description : 'n/a'
       %td= project.position
       %td

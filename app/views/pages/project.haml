@@ -5,8 +5,10 @@
       %li.project.js-overlay-trigger{ data: { overlay_index: idx } }
         .overlay
           %p= project.title
-        - if project.cover_image.attachment.present?
-          = image_tag project.cover_image.attachment.url
+
+        - cover_image = project.cover_image
+        - if cover_image.present? && cover_image.attachment.present?
+          = image_tag cover_image.attachment.url
 
 #overlays
   - @projects.each.with_index(1) do |project, idx|
